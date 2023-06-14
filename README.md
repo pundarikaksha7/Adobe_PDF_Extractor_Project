@@ -12,4 +12,6 @@ This project uses PDF Extract API by Adobe to read transaction bills given in .p
 
 4: Use Processing_Code.py to process all .json files to return .csv files to your desired path location, and done!
 
+PS: Right now my path locations are stored in the file, you will have to replace those with yours for the code to rum.
+
 
