@@ -32,7 +32,6 @@ def return_csv(json_file_path,result_file_path,result_file_index):
     with open(json_file_path, 'r') as json_file:
         json_data = json.load(json_file)
 
-
     #ADDRESS
     #Extracts customers' details using Bounds key of each element
     customer_details=[]
@@ -42,7 +41,6 @@ def return_csv(json_file_path,result_file_path,result_file_index):
                 customer_details.append(element['Text'])
         except:
             continue
-
 
     #INVOICE DETAILS
     #Extracts Invoice number and Issue data using Bounds key
@@ -55,7 +53,6 @@ def return_csv(json_file_path,result_file_path,result_file_index):
         except:
             continue
 
-
     #DETAILS
     #Extracts details paragraph using Bounds key
     details=[]
@@ -65,7 +62,6 @@ def return_csv(json_file_path,result_file_path,result_file_index):
                 details.append(element['Text'])
         except:
             continue
-
 
 
     #PAYMENT DETAILS
@@ -111,9 +107,7 @@ def return_csv(json_file_path,result_file_path,result_file_index):
             i+=4
         except:
             break
-
-
-
+        
     #This paragraph assigns Business details to each dataframe
 
     ##########BUSINESS DETAILS START#########
@@ -154,20 +148,16 @@ def return_csv(json_file_path,result_file_path,result_file_index):
         except:
             continue
             
-
     index=0
-
     while address_list[index]!=',':
         business_street+=address_list[index]
         index+=1
     df['Business_StreetAddress']=business_street
-
     index+=1
 
     while address_list[index]!=',':
         business_city+=address_list[index]
         index+=1
-        
     index+=1
 
     while address_list[index].isnumeric()==False:
@@ -193,10 +183,6 @@ def return_csv(json_file_path,result_file_path,result_file_index):
 
     
     
-
-
-
-
     #This section extracts customer details from the .json file
 
     ########Customer Details Extraction Begins#######
@@ -275,8 +261,6 @@ def return_csv(json_file_path,result_file_path,result_file_index):
 
     #######Customer Details End Here#######
 
-
-
     #Invoice Details
     invoice_details_text=""
     for i in invoice_details:
@@ -313,9 +297,6 @@ def return_csv(json_file_path,result_file_path,result_file_index):
             break
     df['Invoice__DueDate']=due_date
 
-    
-
-
     #Invoice description created here
     details_text=""
     for i in details:
@@ -338,10 +319,6 @@ for i in range(0,100):
     input_file_path=f"/Users/pundarikaksha/Desktop/Adobe Hackathon/InvoicesData/ResultJSONSet/structuredData{i}.json"
 
     return_csv(input_file_path,output_folder_path,i)
-
-    
-
-
 
 
 
