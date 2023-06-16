@@ -8,7 +8,7 @@ This project uses PDF Extract API by Adobe to read transaction bills given in .p
  
     pip install -r requirements.txt
 
-2: Input the Test Data path location and the resultant zip files path location inside PDF_Extractor.py. This algorithm would convert the PDFs into zip files and store them in the assigned path location for zip files.
+2: Input the Test Data path location and the resultant zip files path location inside PDF_Extractor.py. This algorithm would extract data from the PDFs into zip files and store them in the assigned path location for zip files.
 
 3: Use ZipExtractor.py to unzip all zipped files in the zip files folder to another folder containing all unzipped .json files
 
