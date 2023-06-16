@@ -20,7 +20,7 @@ TestDataSet contains all the test data in .pdf format.
 
 ResultZipSet contains all the .zip files obtained by extracting data from the test data using Adobe PDF Extract API.
 
-ResultZipSet contains all the .json files obtained by unzipping data from ResultZipSet.
+ResultJSONSet contains all the .json files obtained by unzipping data from ResultZipSet.
 
 ResultSet contains all .csv files containing extracted data in the required format for each of the 100 files. An ExtractedData.csv is also present in the main directory containing a combined .csv file of all the .csv files.
 
