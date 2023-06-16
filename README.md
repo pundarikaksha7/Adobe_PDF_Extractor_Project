@@ -14,6 +14,8 @@ This project uses PDF Extract API by Adobe to read transaction bills given in .p
 
 4: Use Processing_Code.py to process all .json files to return .csv files to your desired path location, and done!
 
+# Files structure
+
 TestDataSet contains all the test data in .pdf format.
 
 ResultZipSet contains all the .zip files obtained by extracting data from the test data using Adobe PDF Extract API.
