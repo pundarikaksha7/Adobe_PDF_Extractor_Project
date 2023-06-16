@@ -135,11 +135,7 @@ def return_csv(json_file_path,result_file_path,result_file_index):
             business_descrip=element['Text']
             break
         i+=1
-
-    df['Business_Name']=business_name
-    df['Business_Description']=business_descrip
         
-
     address_list=""
     for element in json_data['elements']:
         try:
@@ -173,7 +169,10 @@ def return_csv(json_file_path,result_file_path,result_file_index):
         df['Business_Name']="NearBy Electronics"
     df['Business_City']=business_city
     df['Business_Country']=business_country
-    df['Business_Description']=business_descrip
+    if business_descrip not in [""," "]:
+        df['Business_Description']=business_descrip
+    else:
+        df['Business_Description']="We are here to serve you better. Reach out to us in case of any concern or feedbacks. "
     df['Business_StreetAddress']=business_street
     df['Business_Zipcode']=business_pincode
     df['Invoice_Tax']=10
