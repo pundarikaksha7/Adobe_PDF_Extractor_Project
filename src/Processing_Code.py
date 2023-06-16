@@ -136,6 +136,10 @@ def return_csv(json_file_path,result_file_path,result_file_index):
             break
         i+=1
 
+    df['Business_Name']=business_name
+    df['Business_Description']=business_descrip
+        
+
     address_list=""
     for element in json_data['elements']:
         try:
@@ -167,16 +171,12 @@ def return_csv(json_file_path,result_file_path,result_file_index):
         df['Business_Name']=business_name
     else:
         df['Business_Name']="NearBy Electronics"
-    if business_descrip not in [""," "]:
-        df['Business_Description']=business_descrip
-    else:
-        df['Business_Description']="We are here to serve you better. Reach out to us in case of any concern or feedbacks. "
     df['Business_City']=business_city
     df['Business_Country']=business_country
-    
+    df['Business_Description']=business_descrip
     df['Business_StreetAddress']=business_street
     df['Business_Zipcode']=business_pincode
-    df['Invoice__Tax']=10
+    df['Invoice_Tax']=10
 
 
     #############BUSINESS DETAILS ENDS###########
@@ -246,7 +246,16 @@ def return_csv(json_file_path,result_file_path,result_file_index):
     df['Customer__Address__line2']=customer_address_2
     df['Customer__Email']=customer_email_address
     df['Customer__PhoneNumber']=customer_phone_number
-    customer_name=customer_details[2]+" "+customer_details[3]
+
+
+    #Extraction of customer name using string manipulation
+    customer_name_list=customer_email_address.split("@")
+    customer_name=""
+    for i in customer_name_list[0]:
+        if(i.isalpha()):
+            customer_name+=i
+        else:
+            customer_name+=" "
     df['Customer__Name']=customer_name
 
 
@@ -310,10 +319,6 @@ for i in range(0,100):
     input_file_path=f"/Users/pundarikaksha/Desktop/Adobe Hackathon/InvoicesData/ResultJSONSet/structuredData{i}.json"
 
     return_csv(input_file_path,output_folder_path,i)
-
-    
-
-
 
 
 
