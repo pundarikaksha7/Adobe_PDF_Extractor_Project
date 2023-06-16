@@ -249,13 +249,7 @@ def return_csv(json_file_path,result_file_path,result_file_index):
 
 
     #Extraction of customer name using string manipulation
-    customer_name_list=customer_email_address.split("@")
-    customer_name=""
-    for i in customer_name_list[0]:
-        if(i.isalpha()):
-            customer_name+=i
-        else:
-            customer_name+=" "
+    customer_name=customer_details[2]+" "+customer_details[3]
     df['Customer__Name']=customer_name
 
 
