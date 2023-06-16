@@ -14,6 +14,14 @@ This project uses PDF Extract API by Adobe to read transaction bills given in .p
 
 4: Use Processing_Code.py to process all .json files to return .csv files to your desired path location, and done!
 
+TestDataSet contains all the test data in .pdf format.
+
+ResultZipSet contains all the .zip files obtained by extracting data from the test data using Adobe PDF Extract API.
+
+ResultZipSet contains all the .json files obtained by unzipping data from ResultZipSet.
+
+ResultSet contains all .csv files containing extracted data in the required format for each of the 100 files. An ExtractedData.csv is also present in the main directory containing a combined .csv file of all the .csv files.
+
 PS: Right now my path locations are stored in the files, you will have to replace those with yours for the code to run.
 
 
