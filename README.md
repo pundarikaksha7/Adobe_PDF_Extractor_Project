@@ -24,6 +24,6 @@ ResultJSONSet contains all the .json files obtained by unzipping data from Resul
 
 ResultSet contains all .csv files containing extracted data in the required format for each of the 100 files. An ExtractedData.csv is also present in the main directory containing a combined .csv file of all the .csv files.
 
-PS: Right now my path locations are stored in the files, you will have to replace those with yours for the code to run.
+PS: Right now my path locations are stored in the files, you will have to replace those with yours for the code to run. The codes do not delete any zip file or .json files after extraction to prevent loss of data due to any code defects.
 
 
